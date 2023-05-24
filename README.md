@@ -1,8 +1,8 @@
-# pokedex
-# Guide To Run the App
+
+# Guide To Run pokedex App
 
 
-## Getting Started	## Prerequisites
+## Prerequisites
 
 
 This project is a starting point for a Flutter application.	Before you begin, ensure that you have the following prerequisites installed on your system:
