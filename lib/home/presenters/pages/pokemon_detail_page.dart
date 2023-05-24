@@ -36,7 +36,7 @@ class _PokemonDetailPageState extends State<PokemonDetailPage> {
   void initState() {
     controller = Modular.get();
     connectivityController = Modular.get();
-    controller.loading = true;
+    // controller.loading = true;
     imageUrl = widget.imageUrl;
     _fetchPokeInfo();
     // controller.loading = false;

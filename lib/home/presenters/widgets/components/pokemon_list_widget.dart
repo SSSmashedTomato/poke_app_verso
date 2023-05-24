@@ -112,7 +112,6 @@ class _PokemonListWidgetState extends State<PokemonListWidget> {
       atBottom = true;
       loadData = true;
     });
-    //addListener is one of the three forms to consuming ChangeNotifier
 
     _scrollController.addListener(() {
       if (_scrollController.position.atEdge) {

@@ -93,7 +93,9 @@ class PokemonInfoData extends StatelessWidget {
                         ? Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              for (var i = 0; i < 2; i++)
+                              for (var i = 0;
+                                  i < pokemon.moves.length && i < 2;
+                                  i++)
                                 Text(pokemon.moves[i] ??
                                     '??'.replaceAll('-', ' ').toCapitalized())
                             ],
