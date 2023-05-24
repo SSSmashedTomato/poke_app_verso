@@ -31,7 +31,7 @@ class AppModule extends Module {
   List<Bind> get binds => [
         Bind.factory((i) => http.Client()),
         Bind.factory((i) => PokemonRepository(i())),
-        Bind(
+        Bind.singleton(
           (i) => ConnectivityController(),
         ),
         Bind(

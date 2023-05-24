@@ -36,8 +36,10 @@ class _PokemonDetailPageState extends State<PokemonDetailPage> {
   void initState() {
     controller = Modular.get();
     connectivityController = Modular.get();
+    controller.loading = true;
     imageUrl = widget.imageUrl;
     _fetchPokeInfo();
+    // controller.loading = false;
     super.initState();
   }
 
@@ -47,7 +49,7 @@ class _PokemonDetailPageState extends State<PokemonDetailPage> {
     if (details.primaryVelocity!.compareTo(0) == -1) {
       await _getNextPokemon();
     } else {
-      if (pokemonId != '1') {
+      if (controller.pokemon.id != '1') {
         await _getPrevPokemon();
       }
     }
@@ -55,13 +57,11 @@ class _PokemonDetailPageState extends State<PokemonDetailPage> {
 
   Future<void> _fetchPokeInfo() async {
     if (connectivityController.isConnectionNotEmpty) {
-      if (mounted) {
-        controller.loading = true;
-      }
+      controller.loading = true;
+
       await controller.getAllInfo(widget.pokemon);
-      if (mounted) {
-        controller.loading = false;
-      }
+
+      controller.loading = false;
     }
   }
 

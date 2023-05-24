@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:pokedex_versotech/home/presenters/widgets/components/psyduck_error_widget.dart';
 
 import '../../../../utils/utils.dart';
 import '../../../controller/pokemon_controller.dart';
@@ -48,7 +49,7 @@ class _PokemonListWidgetState extends State<PokemonListWidget> {
               borderRadius: BorderRadius.circular(20),
               child: Container(
                 color: Colors.white,
-                child: controller.hasIssue
+                child: controller.hasIssue && !controller.loading
                     ? Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
@@ -86,7 +87,10 @@ class _PokemonListWidgetState extends State<PokemonListWidget> {
                             controller: _scrollController,
                             slivers: [
                               CustomGridView(controller: controller),
-                              if (atBottom && loadData && !controller.hasIssue)
+                              if (atBottom &&
+                                  loadData &&
+                                  !controller.hasIssue &&
+                                  !controller.loading)
                                 const BottomLoadingWidget(),
                               if (atBottom && !loadData)
                                 const SliverToBoxAdapter(
@@ -124,41 +128,5 @@ class _PokemonListWidgetState extends State<PokemonListWidget> {
         });
       }
     });
-  }
-}
-
-class PsyduckErrorWidget extends StatelessWidget {
-  const PsyduckErrorWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-        height: 300, //MediaQuery.of(context).size.height * 0.5,
-        width: 300, //MediaQuery.of(context).size.width * 0.5,
-        child: Column(children: [
-          Stack(children: [
-            SizedBox(
-              width: 500,
-              height: 70,
-              child: Image.asset(
-                'assets/chat_image.png',
-                fit: BoxFit.fill,
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(top: 15, right: 5, left: 5),
-              child: Align(
-                alignment: Alignment.center,
-                child: Text(
-                  'Ops, ocorreu um erro!',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-          ]),
-          Flexible(flex: 2, child: Image.asset('assets/psyduck.png')),
-        ]));
   }
 }
