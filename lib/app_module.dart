@@ -29,13 +29,13 @@ class AppWidget extends StatelessWidget {
 class AppModule extends Module {
   @override
   List<Bind> get binds => [
-        Bind.factory((i) => http.Client()),
-        Bind.factory((i) => PokemonRepository(i())),
+        Bind.lazySingleton((i) => http.Client()),
+        Bind.lazySingleton((i) => PokemonRepository(i())),
+        Bind.lazySingleton(
+          (i) => PokemonController(pokemonRepo: i.get()),
+        ),
         Bind.singleton(
           (i) => ConnectivityController(),
-        ),
-        Bind(
-          (i) => PokemonController(pokemonRepo: i.get()),
         ),
       ];
 

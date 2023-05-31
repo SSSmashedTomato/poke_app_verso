@@ -85,7 +85,6 @@ class PokemonRepository implements IPokemonRepository {
         pokemonFinal.specialDefence = statsData[4]['base_stat'];
         pokemonFinal.speed = statsData[5]['base_stat'];
       }
-
       return pokemonFinal;
     } catch (error) {
       rethrow;
