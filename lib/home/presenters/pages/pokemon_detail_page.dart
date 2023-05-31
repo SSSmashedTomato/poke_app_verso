@@ -36,10 +36,8 @@ class _PokemonDetailPageState extends State<PokemonDetailPage> {
   void initState() {
     controller = Modular.get();
     connectivityController = Modular.get();
-    // controller.loading = true;
     imageUrl = widget.imageUrl;
     _fetchPokeInfo();
-    // controller.loading = false;
     super.initState();
   }
 
@@ -80,7 +78,7 @@ class _PokemonDetailPageState extends State<PokemonDetailPage> {
       controller.loading = true;
       setState(() {
         imageUrl =
-            'https://assets.pokemon.com/assets/cms2/img/pokedex/full/${idToGetPhoto}.png';
+            'https://assets.pokemon.com/assets/cms2/img/pokedex/full/$idToGetPhoto.png';
       });
 
       await controller.getAllInfo(widget.pokemon, id: idToApi);
@@ -162,7 +160,7 @@ class _PokemonDetailPageState extends State<PokemonDetailPage> {
                                               .toCapitalized(),
                                           style: Theme.of(context)
                                               .textTheme
-                                              .headline5!
+                                              .headlineSmall!
                                               .copyWith(
                                                   fontWeight: FontWeight.bold,
                                                   color: Colors.white,
@@ -176,7 +174,7 @@ class _PokemonDetailPageState extends State<PokemonDetailPage> {
                                     Text('#0${controller.pokemon.id}',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline5!
+                                            .headlineSmall!
                                             .copyWith(
                                                 fontWeight: FontWeight.bold,
                                                 color: Colors.white,
@@ -186,7 +184,7 @@ class _PokemonDetailPageState extends State<PokemonDetailPage> {
                                     Text('#${controller.pokemon.id}',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline5!
+                                            .headlineSmall!
                                             .copyWith(
                                                 fontWeight: FontWeight.bold,
                                                 color: Colors.white,
@@ -196,7 +194,7 @@ class _PokemonDetailPageState extends State<PokemonDetailPage> {
                                     Text('#00${controller.pokemon.id}',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .headline5!
+                                            .headlineSmall!
                                             .copyWith(
                                                 fontWeight: FontWeight.bold,
                                                 color: Colors.white,

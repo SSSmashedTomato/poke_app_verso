@@ -65,7 +65,7 @@ class Pokemon {
       return const Color.fromRGBO(183, 185, 208, 1);
     }
     if (type == 'rock') {
-      return Color.fromARGB(214, 90, 80, 35);
+      return const Color.fromARGB(214, 90, 80, 35);
     }
     if (type == 'poison') {
       return const Color.fromRGBO(112, 85, 155, 1);
@@ -88,7 +88,7 @@ class Pokemon {
     if (type == 'dragon') {
       return const Color.fromARGB(193, 53, 206, 206);
     } else {
-      return Color.fromARGB(255, 88, 16, 16);
+      return const Color.fromARGB(255, 88, 16, 16);
     }
   }
 }

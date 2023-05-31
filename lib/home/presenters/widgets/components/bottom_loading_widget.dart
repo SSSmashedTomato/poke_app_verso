@@ -7,8 +7,8 @@ class BottomLoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-        child: Column(children: const [
+    return const SliverToBoxAdapter(
+        child: Column(children: [
       SizedBox(height: 32),
       Center(child: CircularProgressIndicator(color: appMainColor)),
       SizedBox(height: 32),

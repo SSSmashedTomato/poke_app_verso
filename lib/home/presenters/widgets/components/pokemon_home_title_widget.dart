@@ -9,11 +9,11 @@ class PokemonHomeTitleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(mainAxisSize: MainAxisSize.max, children: const [
+        Row(mainAxisSize: MainAxisSize.max, children: [
           Icon(
             Icons.catching_pokemon_outlined,
             size: 40,
@@ -24,7 +24,7 @@ class PokemonHomeTitleWidget extends StatelessWidget {
             style: titleFont,
           )
         ]),
-        const Text(
+        Text(
           'Bem Vindo Treinador',
           style: TextStyle(fontSize: 20),
         ),

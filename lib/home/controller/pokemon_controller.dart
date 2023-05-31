@@ -25,7 +25,7 @@ abstract class PokemonControllerBase with Store {
   Pokemon pokemon = Pokemon(
       name: 'name',
       url: 'url',
-      pokemonTypeColor: Color.fromARGB(255, 201, 79, 70));
+      pokemonTypeColor: const Color.fromARGB(255, 201, 79, 70));
 
   @observable
   bool hasIssue = false;

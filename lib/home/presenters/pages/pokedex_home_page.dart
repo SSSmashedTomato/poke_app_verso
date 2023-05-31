@@ -3,7 +3,7 @@ import '../widgets/components/components_exports.dart';
 import '../widgets/components/pokemon_list_widget.dart';
 
 class PokedexHomePage extends StatelessWidget {
-  PokedexHomePage({
+  const PokedexHomePage({
     super.key,
   });
 
@@ -13,10 +13,10 @@ class PokedexHomePage extends StatelessWidget {
         appBar: AppBar(
           elevation: 0,
           toolbarHeight: 150,
-          title: Column(
+          title: const Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [
+            children: [
               PokemonHomeTitleWidget(),
             ],
           ),
